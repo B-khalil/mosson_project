@@ -1,0 +1,64 @@
+pipeline {
+    agent any
+    // tools {nodejs "NodeJS"}
+
+    stages {
+        stage('Checkout') {
+            steps {
+                  git url : 'https://github.com/B-khalil/mosson_project.git', branch: 'main'
+            }
+        }
+        stage('First jenkins test'){
+            steps{
+
+                echo 'This is the first Jenkins Test.'
+            }
+
+        }
+        // stage('Install API dependencies') {
+
+        //     steps {
+        //         dir('crypto-api'){
+        //             sh 'npm install'
+        //         }
+        //     }
+        // }
+        // stage('Install APP dependencies') {
+
+        //     steps {
+        //         dir('crypto-app'){
+        //             sh 'npm install'
+        //         }
+        //     }
+        // }
+        // stage('Test') {
+
+        //     // steps {
+        //     //     dir('crypto-api'){
+        //     //         sh 'npm test'
+        //     //     }
+        //     // }
+        //     // post {
+        //     //     always {
+        //     //         junit '*/test-results/.xml'
+        //     //     }
+        //     //     success {
+        //     //         echo 'Les tests ont réussi !'
+        //     //     }
+        //     //     failure {
+        //     //         echo 'Les tests ont échoué !'
+        //     //     }
+        //     // }
+        // }
+//         stage('Build') {
+//             steps {
+//                 sh 'npm run build'
+//             }
+//         }
+//         stage('Deploy') {
+//             steps {
+//                 echo 'Déploiement de l'application...'
+//             }
+//         }
+    }
+}
